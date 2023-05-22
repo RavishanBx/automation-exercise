@@ -20,6 +20,18 @@ verifySignUpPageLoading(){
     cy.get('@displaySignUpTitle').should('be.visible');
 }
 
+clickSignUpFormBtn(){
+    cy.xpath('//button[normalize-space()=\'Signup\']')
+        .as('clickSignUp');
+    cy.get('@clickSignUp').click();
+}
+
+signUpPageNavigationError(){
+    cy.url().should('not.include', '/signup');
+}
+
+
+
 
 
 

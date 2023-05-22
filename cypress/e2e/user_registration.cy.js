@@ -17,5 +17,13 @@ context('User Registration', () => {
             ln.verifySignUpPageLoading();
         });
 
+        it('Should give error if clicked sign up btn without filling out fields', () => {
+            ln.clickSignUpBtn();
+            ln.verifyNavigatingSignUpPage();
+            ln.verifySignUpPageLoading();
+            ln.clickSignUpFormBtn();
+            ln.signUpPageNavigationError();
+        });
+
     });
 });
